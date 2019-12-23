@@ -107,6 +107,11 @@ module.exports = function (sails) {
         return this
       },
 
+      set ({ amount = 1}) {
+        this._metric.set(amount);
+        return this
+      },
+
       dec ({ amount = 1, labels = {} }) {
         this._metric.dec(labels, amount)
         return this
